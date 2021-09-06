@@ -1,23 +1,27 @@
 * {
+    /*Reset do css*/
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 html {
+    /*Rolagem da bagina suave*/
     scroll-behavior: smooth;
 }
 
 :root {
-    --primary-color: #2b2c34;
-    --secondary-color: #994ff3;
-    --secondary-color-light: #d1d1e9;
-    --tertiary-color: #e45858;
-    --background-color: #f2eef5;
+    /*:root representa o elemento <html>, configuração de cores que iremos utilizar  em futuras classes*/
+    --primary-color: #222531; /*cor darkmode*/
+    --secondary-color: FireBrick;/*cor do card adicionar e remover e titulos dos bugs*/
+    --secondary-color-light: Wheat; /*cor do botao cancelar de adicionar hover*/
+    --tertiary-color: DarkRed; /*cor botão ligth-mode de remoção de card*/
+    --background-color: Tan; /*cor ligth-mode*/
     --filter: invert(30%) sepia(68%) saturate(1850%) hue-rotate(247deg) brightness(104%) contrast(91%);
 }
 
 body {
+    /*defifimos a altura minima, cor de fundo, fonte e transição*/
     min-height: 100vh;
     background-color: var(--background-color);
     font-family: 'Helvetica', sans-serif;
@@ -27,74 +31,76 @@ body {
 
 /* ============ NAVIGATION ============ */
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 2rem 1rem;
-    width: 100%;
-    color: var(--primary-color);
-    background-color: var(--background-color);
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    transition: all .5s ease;
+
+nav {/*tag nav dentro do header*/
+    
+    display: flex;/*display flex transforma os itens em flex itens*/
+    justify-content: space-between; /*alinhamento com um espaço entre eles*/
+    align-items: center;/*alinhar no centro*/
+    padding: 2rem 2rem 1rem; /*define a distancia dos itens*/
+    width: 100%; /*define a largura da área*/
+    color: var(--primary-color);/*cor das letras*/
+    background-color: var(--secondary-color-light);/*cor de fundo*/
+    position: fixed; /*fica posicionado em relaçao a janela do navegador*/
+    top: 0;/*permanecer em cima*/
+    z-index: 1; /*se sobrepõe a outros elementos*/
+    transition: all .5s ease; /*transição para criar efeitos e animaçoes*/
 }
 
-#logo {
+#logo {/*configuraçao da div logo*/
     display: flex;
     align-items: center;
     font-weight: 700;
     margin-left: 6rem;
 }
 
-#logo img {
+#logo img {/*configuraçao da imagem do logo*/
     height: 2rem;
     margin: 0 .25rem .5rem 0;
 }
 
-#logo img:hover {
+#logo img:hover {/*animaçao da imagem do logo com o hover quando o cursor do mouse está em cima*/
     animation: bounce .5s infinite;
 }
 
-#logo:hover {
+#logo:hover {/*aplica um filtro definido para a div logo e transforma o cursor em uma maozinha*/
     filter: var(--filter);
     cursor: pointer;
 }
 
 
-label[for="toggle"] {
+label[for="toggle"] {/*nas tags label linkadas com o for é aplicado essa transição, ease config padrao de movimento*/
     transition: all 1s ease;
 }
 
-#nav-items {
+#nav-items {/*aplicamos essas configurações no nav-items e definimos uma margin a direita em 6rem, 1 rem -- 16px então 6rem = 96px*/
     display: flex;
     align-items: center;
     margin-right: 6rem;
 }
 
-#nav-items div {
+#nav-items div {/*configuramos a div do nav-items alinhado no centro e com margin de 32px*/
     display: flex;
     align-items: center;
     margin-left: 2rem;
 }
 
-#nav-items div:hover {
+#nav-items div:hover {/*filtro definido e cursor de maozinha*/
     filter: var(--filter);
     cursor: pointer;
 }
 
-#nav-items div img {
+#nav-items div img {/*margin da imagem dentro da div em 4px*/
     margin: .25rem;
 }
 
-#exit-btn:hover img{
+#exit-btn:hover img{/*animaçao do botao de sair quando o cursor está em cima*/
     animation: bounceLateral .75s infinite ease;
 }
 
 /* ============ FORM MODAL ============ */
 
-#form-modal {
+#form-modal {/*configuraçoes basicas ja explicadas acima aplicadas na div de inserção de bugs*/
     display: none;
     align-items: center;
     justify-content: center;
@@ -107,7 +113,7 @@ label[for="toggle"] {
     transition: all .5s ease;
 }
 
-#form {
+#form {/*config do form*/
     margin: 2rem auto;
     padding: 2rem;
     width: 100%;
@@ -118,12 +124,12 @@ label[for="toggle"] {
     background-color: var(--background-color);
 }
 
-#form-modal h1 {
+#form-modal h1 {/*config do form na tag h1*/
     color: var(--primary-color);
     margin-bottom: 2rem;
 }
 
-#form-modal input {
+#form-modal input {/*config das tags dentro da div*/
     background-color: var(--background-color);
     width: 100%;
     height: 2.5rem;
@@ -131,7 +137,7 @@ label[for="toggle"] {
     margin-bottom: 1rem;;
     padding: 1.5rem .5rem 1rem;
 }
-#form-modal textarea {
+#form-modal textarea {/*config das tags dentro da div*/
     background-color: var(--background-color);
     width: 100%;
     border-radius: .5rem;
@@ -139,15 +145,15 @@ label[for="toggle"] {
     padding: 1.5rem .5rem 1rem;
 }
 
-#form label {
-    display: inline-block;
+#form label {/*config das tags dentro da div*/
+    display: inline-block; /*os elementos não quebrao as linhas, permitindo um ficar ao lado da outra*/
     color: var(--background-color);
     background-color: var(--secondary-color);
     font-size: .75rem;
     border-radius: 1rem;
     padding: .2rem .5rem;
-    position: relative;
-    bottom: -.5rem;
+    position: relative;/*posiçao relacionada a si memsmo*/
+    bottom: -.5rem; /*8px inferior, em relação ao label relative*/
 }
 
 .modal-btn {
@@ -157,13 +163,13 @@ label[for="toggle"] {
     flex: 2;
 }
 
-.modal-btn button {
+.modal-btn button{/*config dos botões*/
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--background-color);
     background-color: var(--secondary-color);
-    text-transform: uppercase;
+    text-transform: uppercase; /*transforma em maiúsculo*/
     border: none;
     width: 8rem;
     height: 3rem;
@@ -171,53 +177,47 @@ label[for="toggle"] {
     margin: 1rem;
     cursor: pointer;
     transition: all .25s;
-}
-
+};
+/*config do botão cancelar*/
 #btn-close-form {
     color: var(--secondary-color);
     border: solid 1px var(--secondary-color);
     background-color: var(--background-color);
 }
-
+/*animação nos botões*/
 .modal-btn button:hover,
-#btn-close-form:hover {
+#btn-close-form:hover { 
     color: var(--secondary-color);
     background-color: var(--secondary-color-light);
     border: none;
-    transform: scale(1.05);
+    transform: scale(1.05);/*aumenta o tamanho do botão quando o mouse está em cima*/
 }
 
-
-
 /* ============ CARDS SECTION ============ */
-
-main {
+main {/*config main*/
     width: 100%;
-    min-height: 90vh;
+    min-height: 90vh; /*1vh é 9px altura. 1vw 7.5px largura*/
     margin: 0 auto;
     padding: 5rem 0 2rem;
 }
-
-section.cards {
-    display: grid;
+section.cards {/*config section*/
+    display: grid; /*o display grid posicionará nossos card em forma de grade*/
     grid-template-columns: repeat(auto-fit, 300px);
-    gap: 4rem 2rem;
+    gap: 4rem 2rem; /*lacunas linhas e colunas*/
     justify-content: center;
     width: 100%;
     margin-top: 5rem;
     padding-bottom: 3rem;
 }
 
-
 /* ============ CARDS ============ */
-
-.main-card {
+.main-card { /*config dos cards*/
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin: 1rem;
     padding: 2rem;
-    flex-direction: column;
+    flex-direction: column; /*posicionamento dos cards na direção em decima para baixo*/
     height: 28rem;
     width: 17rem;
     max-width: 20rem;
@@ -228,26 +228,22 @@ section.cards {
     position: relative;
     transition: all .25s ease;
 }
-
-.main-card:hover {
+.main-card:hover {/*config animação dos cards*/
     box-shadow: 0px 0px 0px .25rem #e45858;
 }
-
-.add-card {
+.add-card {/*config animação do card de adicionar bug*/
     color: var(--primary-color);
     justify-content: center;
     border: 2px dotted var(--primary-color);
     cursor: pointer;
     transition: all .5s ease;
 }
-
-.add-card #add-card-title {
+.add-card #add-card-title {/*config animação do card de adicionar bug*/
     font-size: 1.5rem;
     text-align: center;
     text-decoration: underline;
 }
-
-.add-card span {
+.add-card span {/*config animação do card de adicionar bug span +*/
     color: var(--background-color);
     background-color: var(--primary-color);
     display: flex;
@@ -260,7 +256,6 @@ section.cards {
     font-weight: 700;
     transition: all .5s ease;
 }
-
 .add-card::after {
     content: "";
     width: 100%;
@@ -451,7 +446,7 @@ footer {
     border: 10px solid var(--secondary-color-light);
     box-shadow: 0 0 0 10px var(--background-color);
     position: relative;
-    border-radius: 0.5%;
+    border-radius: 0.01%;
 }
 
 .fechar{

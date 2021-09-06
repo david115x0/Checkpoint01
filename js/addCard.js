@@ -1,6 +1,7 @@
-import removeCard from "./removeCard.js";
+import removeCard from "./removeCard.js"; // importamos o remove card para poder utilizar a função removeCard();
 
-export default function addCard(e) {
+//exportamos a função addCard para utilizarmos em app.js que esta linkada no index.html
+export default function addCard(e) { 
     // previnir o comportamento padrão de carregamento
     e.preventDefault();
 
@@ -32,14 +33,13 @@ export default function addCard(e) {
     };
     
     //Inserimos cards
-    
     addCard.insertAdjacentHTML('afterend', `
     <article class="main-card card">
     <div class="card-image">
-        <img src="${url.value}" alt=""/>
+        <img src="${url.value}" alt="" id="img_save"/>
     </div>
-    <h1 class="title">${titulo.value}</h1>
-    <p class="description">${descricao.value}</p>
+    <h1 class="title" id="titulo">${titulo.value}</h1>
+    <p class="description" id="descricao">${descricao.value}</p>
     <button class='remove-btn'>&#215</button>
     </article>
     

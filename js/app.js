@@ -1,11 +1,13 @@
+
+// importarmos todas as nossa funçoes para app.js, porque em index.html defenimos o type="module" que dá prioridade a esse arquivo.
 import { openForm, closeForm, openLogin, closeLogin } from "./openCloseForms.js"
 import removeCard from "./removeCard.js"
 import { lightMode, darkMode } from "./toggle.js";
 import addCard from "./addCard.js";
-import inputCounter from "./inputCounter.js"
+import inputCounter from "./inputCounter.js";
+
 
 // dark and light mode
-
 let toggle = document.querySelector('#toggle');
 toggle.addEventListener('change', function () {
     if (toggle.checked) {
@@ -36,5 +38,6 @@ let btnOpenForm = document.getElementById('btn-open-form');
 let btnCloseForm = document.getElementById('btn-close-form');
 btnOpenForm.onclick = openForm();
 btnCloseForm.onclick = closeForm();
+
 
 
